@@ -1,3 +1,4 @@
+//This is the DTM top module
 module dmi_jtag (
   input  logic         tck_i,
   input  logic         tms_i,
