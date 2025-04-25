@@ -122,10 +122,10 @@ always_comb begin : p_fsm
             WaitReadValid: begin
                 if (dmi_resp_valid) begin
                     unique case (dmi_resp.resp)
-                        dm::DTM_SUCCESS: data_d = dmi_resp.data; // should be considered
+                        dm::DTM_SUCCESS: data_d = dmi_resp.data; // This assignment should be considered
                         dm::DTM_BUSY: begin data_d = 32'hB051B051; error_dmi_busy = 1'b1; end
                         dm::DTM_ERR: begin data_d = 32'hDEADBEEF; error_dmi_op_failed = 1'b1; end
-                        default: data_d = 32'hBAADC0DE; //should be considered
+                        default: data_d = 32'hBAADC0DE; //This assignment should be considered
                         //default: ;                        
                     endcase
                     state_d = Idle;
