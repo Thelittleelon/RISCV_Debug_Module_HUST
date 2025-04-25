@@ -1,3 +1,4 @@
+//Testbench for DTM top module
 module tb_dmi_jtag;
   // Declare signals
   logic tck_i;
