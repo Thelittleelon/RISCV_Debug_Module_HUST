@@ -229,7 +229,7 @@ package dm;
 
   typedef struct packed  {
     logic [31:0] data;
-    dtm_op_status_e  resp;
+    dtm_op_status_e  resp; //make some changes here
   } dmi_resp_t;
 
   typedef struct packed {
