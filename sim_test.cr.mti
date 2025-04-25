@@ -1,0 +1,15 @@
+/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv {1 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module jtag_tap
+
+Top level modules:
+	jtag_tap
+
+} {} {}} /home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv {1 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_dtm_jtag_tap
+
+Top level modules:
+	tb_dtm_jtag_tap
+
+} {} {}}

@@ -1,0 +1,61 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/hoangdang/Documents/DATN/debug_code
+vjtag_tap
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1745562903
+!i10b 1
+!s100 _Cn^I]YW8Go0D]W;mJCf>0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IJDV;?;E9c4m>B[A1M]5a11
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1745552089
+8/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv
+F/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv
+!i122 24
+L0 1 271
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1745562903.000000
+!s107 /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+vtb_dtm_jtag_tap
+R1
+R2
+!i10b 1
+!s100 Q`zk4bXSV3?;khWfaEIi`3
+R3
+In@fkWW<BAB3@H4>bW@O>J1
+R4
+S1
+R0
+w1745562863
+8/home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv
+F/home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv
+!i122 25
+L0 1 127
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv|
+!i113 1
+R7
+R8

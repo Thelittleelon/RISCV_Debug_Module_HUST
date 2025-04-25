@@ -1,0 +1,606 @@
+$date
+	Fri Apr 25 13:36:21 2025
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module tb_dtm_jtag_tap $end
+$var reg 1 ! tck_i $end
+$var reg 1 " tms_i $end
+$var reg 1 # td_i $end
+$var reg 1 $ trst_ni $end
+$var reg 1 % td_o $end
+$var reg 1 & tdo_oe_o $end
+$var reg 1 ' dmi_clear_o $end
+$var reg 1 ( update_o $end
+$var reg 1 ) capture_o $end
+$var reg 1 * shift_o $end
+$var reg 1 + tdi_o $end
+$var reg 1 , tck_o $end
+$var reg 1 - dtmcs_select_o $end
+$var reg 1 . dtmcs_tdo_i $end
+$var reg 1 / dmi_select_o $end
+$var reg 1 0 dmi_tdo_i $end
+
+$scope task scan_ir $end
+$upscope $end
+
+$scope task scan_dr $end
+$upscope $end
+
+$scope module dut $end
+$var parameter 32 1 IdCodeValue $end
+$var wire 1 2 tck_i $end
+$var wire 1 3 tms_i $end
+$var wire 1 4 td_i $end
+$var wire 1 5 trst_ni $end
+$var reg 1 6 td_o $end
+$var reg 1 7 tdo_oe_o $end
+$var reg 1 8 dmi_clear_o $end
+$var reg 1 9 update_o $end
+$var reg 1 : capture_o $end
+$var reg 1 ; shift_o $end
+$var reg 1 < tdi_o $end
+$var reg 1 = tck_o $end
+$var reg 1 > dtmcs_select_o $end
+$var wire 1 ? dtmcs_tdo_i $end
+$var reg 1 @ dmi_select_o $end
+$var wire 1 A dmi_tdo_i $end
+$var reg 5 B jtag_ir_shift_d [4:0] $end
+$var reg 5 C jtag_ir_shift_q [4:0] $end
+$var reg 5 D jtag_ir_d [4:0] $end
+$var reg 5 E jtag_ir_q [4:0] $end
+$var reg 1 F shift_ir $end
+$var reg 1 G capture_ir $end
+$var reg 1 H test_logic_reset $end
+$var reg 1 I update_ir $end
+$var reg 1 J bypass_select $end
+$var reg 1 K idcode_select $end
+$var reg 1 L shift_dr $end
+$var reg 1 M capture_dr $end
+$var reg 1 N update_dr $end
+$var reg 1 O tdo_sel $end
+$var reg 4 P tap_state_d [3:0] $end
+$var reg 4 Q tap_state_q [3:0] $end
+$var reg 32 R idcode_d [31:0] $end
+$var reg 32 S idcode_q [31:0] $end
+$var reg 1 T bypass_d $end
+$var reg 1 U bypass_q $end
+
+$scope begin ir_update $end
+$upscope $end
+
+$scope begin dr_selection $end
+$upscope $end
+
+$scope begin output_selection $end
+$upscope $end
+
+$scope begin tdo_regs $end
+$upscope $end
+
+$scope begin tap_fsm $end
+$upscope $end
+
+$scope begin update_value $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+1"
+0#
+0$
+0%
+0&
+1'
+0(
+0)
+0*
+0+
+0,
+0-
+0.
+0/
+00
+06
+07
+18
+09
+0:
+0;
+0<
+0=
+0>
+0@
+b0 B
+b0 C
+b1 D
+b1 E
+0F
+0G
+1H
+0I
+0J
+1K
+0L
+0M
+0N
+1O
+b0 P
+b0 Q
+b11011110101011011011111011101111 R
+b11011110101011011011111011101111 S
+0T
+0U
+b11011110101011011011111011101111 1
+02
+13
+04
+05
+0?
+0A
+$end
+#20
+1!
+12
+1=
+1,
+#40
+1$
+0!
+15
+02
+0=
+0,
+#60
+1!
+12
+1=
+1,
+16
+1%
+#80
+0!
+02
+0=
+0,
+#100
+1!
+12
+1=
+1,
+#120
+0!
+02
+0=
+0,
+#140
+0"
+1!
+03
+12
+1=
+1,
+0H
+b1 P
+1H
+#160
+0!
+02
+0=
+0,
+#180
+1"
+1!
+13
+12
+1=
+1,
+0H
+b0 P
+1H
+b1 Q
+0H
+b10 P
+08
+0'
+#200
+0!
+02
+0=
+0,
+#220
+1!
+12
+1=
+1,
+b10 Q
+b1001 P
+#240
+0!
+02
+0=
+0,
+#260
+0"
+1!
+03
+12
+1=
+1,
+b11 P
+b1001 Q
+b1010 P
+#280
+0!
+02
+0=
+0,
+#300
+1!
+12
+1=
+1,
+b1010 Q
+1G
+b1011 P
+b101 B
+#320
+0!
+02
+0=
+0,
+#340
+1#
+1!
+14
+12
+1=
+1<
+1+
+1,
+b0 B
+b101 B
+b101 C
+b1011 Q
+0G
+1F
+b10010 B
+#360
+0!
+02
+0=
+0,
+#380
+0#
+1!
+04
+12
+1=
+0<
+0+
+1,
+b101 B
+b10 B
+b10010 C
+17
+1&
+b10010 B
+b1001 B
+0O
+#400
+0!
+02
+0=
+0,
+#420
+1!
+12
+1=
+1,
+b1001 C
+06
+0%
+b100 B
+1O
+#440
+0!
+02
+0=
+0,
+#460
+1!
+12
+1=
+1,
+b100 C
+16
+1%
+b10 B
+0O
+#480
+0!
+02
+0=
+0,
+#500
+1#
+1!
+14
+12
+1=
+1<
+1+
+1,
+b100 B
+b10010 B
+b10 C
+06
+0%
+b10 B
+b10001 B
+#520
+0!
+02
+0=
+0,
+#540
+1"
+1!
+13
+12
+1=
+1,
+0F
+1F
+b1100 P
+b10 B
+b10001 B
+b10001 C
+b11000 B
+1O
+#560
+0!
+02
+0=
+0,
+#580
+1!
+12
+1=
+1,
+b11000 C
+16
+b1100 Q
+1%
+0F
+b1111 P
+#600
+0!
+02
+0=
+0,
+#620
+0"
+1!
+03
+12
+1=
+1,
+b1101 P
+07
+b1111 Q
+0&
+1I
+b1 P
+b11000 D
+#640
+0!
+02
+0=
+0,
+#660
+1"
+1!
+13
+12
+1=
+1,
+0I
+1I
+b10 P
+b1 D
+b11000 D
+b11000 E
+b1 Q
+0I
+0K
+1J
+0O
+#680
+0!
+02
+0=
+0,
+#700
+0"
+1!
+03
+12
+1=
+1,
+b1 P
+06
+b10 Q
+0%
+b11 P
+#720
+0!
+02
+0=
+0,
+#740
+0#
+1!
+04
+12
+1=
+0<
+0+
+1,
+b11 Q
+1M
+b100 P
+1:
+1)
+#760
+0!
+02
+0=
+0,
+#780
+1#
+1!
+14
+12
+1=
+1<
+1+
+1,
+b100 Q
+0M
+1L
+1;
+0:
+0)
+1*
+1T
+#800
+0!
+02
+0=
+0,
+#820
+1!
+12
+1=
+1,
+17
+1U
+1&
+1O
+#840
+0!
+02
+0=
+0,
+#860
+0#
+1!
+04
+12
+1=
+0<
+0+
+1,
+0T
+16
+1%
+#880
+0!
+02
+0=
+0,
+#900
+1!
+12
+1=
+1,
+0U
+0O
+#920
+0!
+02
+0=
+0,
+#940
+1!
+12
+1=
+1,
+06
+0%
+#960
+0!
+02
+0=
+0,
+#980
+1!
+12
+1=
+1,
+#1000
+0!
+02
+0=
+0,
+#1020
+1!
+12
+1=
+1,
+#1040
+0!
+02
+0=
+0,
+#1060
+1#
+1!
+14
+12
+1=
+1<
+1+
+1,
+1T
+#1080
+0!
+02
+0=
+0,
+#1100
+1!
+12
+1=
+1,
+1U
+1O
+#1120
+0!
+02
+0=
+0,
+#1140
+1!
+12
+1=
+1,
+16
+1%
+#1160
+0!
+02
+0=
+0,
+#1180
+1!
+1
