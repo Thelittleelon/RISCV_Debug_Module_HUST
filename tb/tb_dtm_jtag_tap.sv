@@ -72,12 +72,12 @@ module tb_dtm_jtag_tap;
       
       // Shift 5-bit IR, LSB first
       for (int i = 0; i < 5; i++) begin
+        if (i == 4) tms_i = 1; //Exit1IR
         td_i = ir_val[i];
         #40;
       end
       
 
-      tms_i = 1; #40; // Exit1IR
       tms_i = 1; #40; // UpdateIR
       tms_i = 0; #40; // RunTestIdle
     end
@@ -88,7 +88,7 @@ module tb_dtm_jtag_tap;
     begin
       tms_i = 1; #40; // SelectDR
       tms_i = 0; #40; // CaptureDR
-      tms_i = 0; #40; // ShiftDR
+      tms_i = 0; #40;// ShiftDR
       
       // Shift DR, LSB first
       for (int i = 0; i < 41; i++) begin
