@@ -59,6 +59,7 @@ assign dmi_clear = jtag_dmi_clear || (dtmcs_select && update && dtmcs_q.dmihardr
 assign tck_o = tck_i;
 assign dmi_tdo = dmiaccess_q[0];
 
+
 // DTMCS logic
 always_comb begin
     dtmcs_d = dtmcs_q;
@@ -121,10 +122,11 @@ always_comb begin : p_fsm
             WaitReadValid: begin
                 if (dmi_resp_valid) begin
                     unique case (dmi_resp.resp)
-                        dm::DTM_SUCCESS: data_d = dmi_resp.data;
-                        dm::DTM_BUSY: begin data_d = 32'hDEADBEEF; error_dmi_busy = 1'b1; end
-                        dm::DTM_ERR: begin data_d = 32'hB051B051; error_dmi_op_failed = 1'b1; end
-                        default: data_d = 32'hBAADCODE;
+                        dm::DTM_SUCCESS: data_d = dmi_resp.data; // should be considered
+                        dm::DTM_BUSY: begin data_d = 32'hB051B051; error_dmi_busy = 1'b1; end
+                        dm::DTM_ERR: begin data_d = 32'hDEADBEEF; error_dmi_op_failed = 1'b1; end
+                        default: data_d = 32'hBAADC0DE; //should be considered
+                        //default: ;                        
                     endcase
                     state_d = Idle;
                 end

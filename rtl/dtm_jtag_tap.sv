@@ -1,4 +1,4 @@
-module jtag_tap  #(
+module dtm_jtag_tap  #(
     parameter [31:0] IdCodeValue = 32'h00000001
 )
 (

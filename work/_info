@@ -9,53 +9,181 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/hoangdang/Documents/DATN/debug_code
-vjtag_tap
+Xdm
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1745562903
+Z2 !s110 1745575367
 !i10b 1
-!s100 _Cn^I]YW8Go0D]W;mJCf>0
+!s100 =Z0_G4_a9BT;z8356z5fI2
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IJDV;?;E9c4m>B[A1M]5a11
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+I6h5N_0`75X`Bl6kJI;^3C3
+V6h5N_0`75X`Bl6kJI;^3C3
 S1
 R0
-w1745552089
-8/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv
-F/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv
-!i122 24
-L0 1 271
-Z5 OV;L;2020.1;71
+w1745568920
+8/home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv
+F/home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv
+!i122 123
+L0 19 0
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1745562903.000000
-!s107 /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv|
+Z5 !s108 1745575367.000000
+!s107 /home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv|
 !i113 1
-Z7 o-work work -sv
-Z8 tCvgOpt 0
-vtb_dtm_jtag_tap
+Z6 o-work work -sv
+Z7 tCvgOpt 0
+vdmi_jtag
+R1
+Z8 DXx4 work 2 dm 0 22 6h5N_0`75X`Bl6kJI;^3C3
+Z9 !s110 1745575368
+!i10b 1
+!s100 fUiA?2:<9:hciS6a=a44B2
+R3
+I?=SPd;YM0BHobo[j_00`62
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1745574776
+8/home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv
+F/home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv
+!i122 128
+L0 1 75
+R4
+r1
+!s85 0
+31
+Z11 !s108 1745575368.000000
+!s107 /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv|
+!i113 1
+R6
+R7
+vdtm_jtag_tap
 R1
 R2
 !i10b 1
-!s100 Q`zk4bXSV3?;khWfaEIi`3
+!s100 ?zA>cRNK39cVMnVnZ4?=;3
 R3
-In@fkWW<BAB3@H4>bW@O>J1
-R4
+IfDfR8:4D:hJ5l55z^XHQb0
+R10
 S1
 R0
-w1745562863
-8/home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv
-F/home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv
-!i122 25
-L0 1 127
-R5
+w1745566422
+Z12 8/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv
+Z13 F/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv
+!i122 124
+Z14 L0 1 271
+R4
 r1
 !s85 0
 31
+R5
+Z15 !s107 /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv|
+Z16 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv|
+!i113 1
 R6
+R7
+vdtm_registers
+R1
+R8
+R2
+!i10b 1
+!s100 6Hn^47;4AYCR87Z=XHFac0
+R3
+Ibe55V=lM7g:DaFXJaXC@43
+R10
+S1
+R0
+w1745575354
+8/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_registers.sv
+F/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_registers.sv
+!i122 125
+L0 1 190
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_registers.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_registers.sv|
+!i113 1
+R6
+R7
+vjtag_tap
+R1
+!s110 1745564458
+!i10b 1
+!s100 _Cn^I]YW8Go0D]W;mJCf>0
+R3
+IJDV;?;E9c4m>B[A1M]5a11
+R10
+S1
+R0
+w1745552089
+R12
+R13
+!i122 26
+R14
+R4
+r1
+!s85 0
+31
+!s108 1745564458.000000
+R15
+R16
+!i113 1
+R6
+R7
+vtb_dmi_jtag
+R1
+R8
+R9
+!i10b 1
+!s100 ?aZSFeT2;?^[X2AniF?=32
+R3
+IoT5RUP[WWN0U9]jlN[iED3
+R10
+S1
+R0
+w1745574797
+8/home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv
+F/home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv
+!i122 127
+L0 1 148
+R4
+r1
+!s85 0
+31
+R11
+!s107 /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv|
+!i113 1
+R6
+R7
+vtb_dtm_jtag_tap
+R1
+R9
+!i10b 1
+!s100 5NgC:WUaM;bBTI3K0BO]F2
+R3
+IV]ooM>W7HATD8;@eIMzG[0
+R10
+S1
+R0
+w1745564440
+8/home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv
+F/home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv
+!i122 126
+L0 1 127
+R4
+r1
+!s85 0
+31
+R5
 !s107 /home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv|
 !i113 1
+R6
 R7
-R8
