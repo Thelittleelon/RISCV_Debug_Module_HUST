@@ -147,9 +147,9 @@ end
 
 
   // Dump waveform
-  initial begin
+  /*initial begin
     $dumpfile("wave_dmi_jtag.vcd");
     $dumpvars(0, tb_dmi_jtag);
-  end
+  end*/
 
 endmodule
