@@ -134,9 +134,15 @@ initial begin
     dmi_resp_valid_i = 1;
 
     #100;
-    dmi_resp_valid_i = 0;    
+    dmi_resp_valid_i = 0;
 
-    #200 $finish;
+    #40;
+
+    tms_i = 1; #40; // SelectDR
+    tms_i = 0; #40; // CaptureDR 
+    tms_i = 0; #40;// ShiftDR
+
+    #100 $finish;
 end
 
 

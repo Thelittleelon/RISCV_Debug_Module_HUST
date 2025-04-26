@@ -39,6 +39,7 @@ dm::dtmcs_t dtmcs_d, dtmcs_q;
 
 logic [6:0] address_d, address_q;
 logic [31:0] data_d, data_q;
+logic [31:0] resp_data_d, resp_data_q; 
 logic [40:0] dmiaccess_d, dmiaccess_q;
 logic error_dmi_busy, error_dmi_op_failed;
 
@@ -94,6 +95,7 @@ always_comb begin : p_fsm
     op_d = op_q;
     error_d = error_q;
     state_d = state_q;
+    resp_data_d = resp_data_q;
     dmi_req_valid = 1'b0;
     error_dmi_busy = 1'b0;
     error_dmi_op_failed = 1'b0;
@@ -101,6 +103,7 @@ always_comb begin : p_fsm
     if (dmi_clear) begin
         address_d = 7'h00;
         data_d = '0;
+        resp_data_d = '0;
         state_d = Idle;
         error_d = DMINoError;
     end else begin
@@ -122,7 +125,7 @@ always_comb begin : p_fsm
             WaitReadValid: begin
                 if (dmi_resp_valid) begin
                     unique case (dmi_resp.resp)
-                        dm::DTM_SUCCESS: data_d = dmi_resp.data; // This assignment should be considered
+                        dm::DTM_SUCCESS: resp_data_d = dmi_resp.data; // This assignment should be considered
                         dm::DTM_BUSY: begin data_d = 32'hB051B051; error_dmi_busy = 1'b1; end
                         dm::DTM_ERR: begin data_d = 32'hDEADBEEF; error_dmi_op_failed = 1'b1; end
                         default: data_d = 32'hBAADC0DE; //This assignment should be considered
@@ -138,6 +141,7 @@ always_comb begin : p_fsm
             WaitWriteValid: begin
                 if (dmi_resp_valid) begin
                     unique case (dmi_resp.resp)
+                        dm::DTM_SUCCESS: resp_data_d = dmi_resp.data; // Add this state, even when sending write request, response should be handled                 
                         dm::DTM_BUSY: begin data_d = 32'hDEADBEEF; error_dmi_busy = 1'b1; end
                         dm::DTM_ERR: begin data_d = 32'hB051B051; error_dmi_op_failed = 1'b1; end
                         default: ;
@@ -162,7 +166,7 @@ always_comb begin: choose_dmiaccess
     if (dmi_clear) begin
         dmiaccess_d = '0;
     end else if (capture && dmi_select) begin
-        dmiaccess_d = {address_q, data_q, error_q}; //capture to get data from dmi_resp
+        dmiaccess_d = {address_q, resp_data_q, error_q}; //capture to get data from dmi_resp
     end else if (shift && dmi_select) begin
         dmiaccess_d = {tdi, dmiaccess_q[40:1]};
     end
@@ -173,6 +177,7 @@ always_ff @(posedge tck_i or negedge trst_ni) begin
         dmiaccess_q <= '0;
         address_q <= '0;
         data_q <= '0;
+        resp_data_q <= resp_data_d;
         op_q <= dm::DTM_NOP; //not so sure
         error_q <= DMINoError;
         state_q <= Idle;
@@ -181,6 +186,7 @@ always_ff @(posedge tck_i or negedge trst_ni) begin
         dmiaccess_q <= dmiaccess_d;
         address_q <= address_d;
         data_q <= data_d;
+        resp_data_q <= resp_data_d;
         op_q <= op_d;
         error_q <= error_d;
         state_q <= state_d;

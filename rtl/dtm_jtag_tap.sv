@@ -55,7 +55,7 @@ always_comb begin : ir_update
     jtag_ir_shift_d = jtag_ir_shift_q;
     jtag_ir_d = jtag_ir_q;
 
-    if (capture_ir) begin
+    if (capture_ir) begin 
         jtag_ir_shift_d = 5'b00101; //reset value to 00101
     end
 
@@ -209,18 +209,12 @@ always_comb begin: tap_fsm
       SelectIrScan: begin
         tap_state_d = (tms_i) ? TestLogicReset : CaptureIr;
       end
-      // In this controller state, the shift register bank in the
-      // Instruction Register parallel loads a pattern of fixed values on
-      // the rising edge of TCK. The last two significant bits must always
-      // be "01".
+
       CaptureIr: begin
         capture_ir = 1'b1;
         tap_state_d = (tms_i) ? Exit1Ir : ShiftIr;
       end
-      // In this controller state, the instruction register gets connected
-      // between TDI and TDO, and the captured pattern gets shifted on
-      // each rising edge of TCK. The instruction available on the TDI
-      // pin is also shifted in to the instruction register.
+
       ShiftIr: begin
         shift_ir = 1'b1;
         tap_state_d = (tms_i) ? Exit1Ir : ShiftIr;
@@ -235,10 +229,7 @@ always_comb begin: tap_fsm
       Exit2Ir: begin
         tap_state_d = (tms_i) ? UpdateIr : ShiftIr;
       end
-      // In this controller state, the instruction in the instruction
-      // shift register is latched to the latch bank of the Instruction
-      // Register on every falling edge of TCK. This instruction becomes
-      // the current instruction once it is latched.
+
       UpdateIr: begin
         update_ir = 1'b1;
         tap_state_d = (tms_i) ? SelectDrScan : RunTestIdle;
