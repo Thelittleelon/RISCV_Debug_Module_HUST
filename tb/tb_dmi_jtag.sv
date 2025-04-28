@@ -112,7 +112,7 @@ initial begin
     scan_ir(5'b10001);
 
     // Scan DR: Write data to DMI
-    scan_dr(41'b00100000000011111111111111111111100000110);
+    scan_dr(41'h0401FFFFF06);
 
     #160;
     
