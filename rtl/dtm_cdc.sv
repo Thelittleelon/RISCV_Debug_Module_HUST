@@ -1,4 +1,4 @@
-module cdc_chain_top (
+module dtm_cdc (
   input  logic         tck,
   input  logic         trst_ni,
   input  logic         clk,
