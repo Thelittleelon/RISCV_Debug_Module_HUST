@@ -1,35 +1,32 @@
-module cdc_stage #(
-  parameter type req_t  = logic,
-  parameter type resp_t = logic
-)(
+module cdc_stage (
   input  logic clk,
   input  logic rst_ni,
 
   // INPUT SIDE (source domain, e.g. TCK domain)
   input  logic        dmi_clear_i,
-  input  req_t        dmi_req_i,
+  input  dm::dmi_req_t        dmi_req_i,
   input  logic        dmi_req_valid_i,
   output logic        dmi_req_ready_o,
-  output resp_t       dmi_resp_o,
+  output dm::dmi_resp_t       dmi_resp_o,
   output logic        dmi_resp_valid_o,
   input  logic        dmi_resp_ready_i,
 
   // OUTPUT SIDE (destination domain, e.g. CLK domain)
   output logic        dmi_clear_o,
-  output req_t        dmi_req_o,
+  output dm::dmi_req_t        dmi_req_o,
   output logic        dmi_req_valid_o,
   input  logic        dmi_req_ready_i,
-  input  resp_t       dmi_resp_i,
+  input  dm::dmi_resp_t       dmi_resp_i,
   input  logic        dmi_resp_valid_i,
   output logic        dmi_resp_ready_o
 );
 
   // Internal registers for request path
-  req_t  dmi_req_q;
+  dm::dmi_req_t  dmi_req_q;
   logic  dmi_req_valid_q;
 
   // Internal registers for response path
-  resp_t dmi_resp_q;
+  dm::dmi_resp_t dmi_resp_q;
   logic  dmi_resp_valid_q;
 
   // dmi_clear sync
