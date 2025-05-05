@@ -1,30 +1,113 @@
-module dtm_cdc (
-    //DTM Side
-    input logic tck_i,
-    input logic trst_ni,
-    input dm:dmi_req_t jtag_dmi_req_i,
-    output logic jtag_dmi_ready_o,
-    input logic jtag_dmi_valid_i,
-    input logic jtag_dmi_cdc_clear_i,
+module cdc_chain_top (
+  input  logic         tck,
+  input  logic         trst_ni,
+  input  logic         clk,
+  input  logic         rst_ni,
 
-    output dm:dmi_resp_t jtag_dmi_resp_o,
-    output logic jtag_dmi_valid_o,
-    input logic jtag_dmi_ready_i
+  // JTAG domain signals
+  input  logic             jtag_dmi_clear_i,
+  input  dm::dmi_req_t     jtag_dmi_req_i,
+  input  logic             jtag_dmi_req_valid_i,
+  output logic             jtag_dmi_req_ready_o,
 
-    //DM Side
-    input logic clk_i,
-    input logic rst_ni,
+  output dm::dmi_resp_t    jtag_dmi_resp_o,
+  input  logic             jtag_dmi_resp_ready_i,
+  output logic             jtag_dmi_resp_valid_o,
 
-    output logic dbg_dmi_rst_no,
-    output dm:dmi_req_t dbg_dmi_req_o,
-    output logic dbg_dmi_valid_o,
-    input logic dbg_dmi_ready_i,
+  // DBG domain signals
+  output logic             dbg_dmi_clear_o,
+  output dm::dmi_req_t     dbg_dmi_req_o,
+  output logic             dbg_dmi_req_valid_o,
+  input  logic             dbg_dmi_req_ready_i,
 
-    input dm:dmi_resp_t dbg_dmi_ready_i,
-    output logic dbg_dmi_ready_o,
-    input logic dbg_dmi_valid_i
+  input  dm::dmi_resp_t    dbg_dmi_resp_i,
+  output logic             dbg_dmi_resp_ready_o,
+  input  logic             dbg_dmi_resp_valid_i
 );
 
+  // Intermediate wires between 3 CDC stages
+  logic             dmi_clear_1, dmi_clear_2;
+  dm::dmi_req_t     dmi_req_1, dmi_req_2;
+  logic             dmi_req_valid_1, dmi_req_valid_2;
+  logic             dmi_req_ready_1, dmi_req_ready_2;
 
+  dm::dmi_resp_t    dmi_resp_1, dmi_resp_2;
+  logic             dmi_resp_valid_1, dmi_resp_valid_2;
+  logic             dmi_resp_ready_1, dmi_resp_ready_2;
+
+  // CDC Stage 1 (tck -> tck)
+  cdc_stage stage_0 (
+    .clk_i           (tck),
+    .rst_ni          (trst_ni),
+
+    .dmi_clear_i     (jtag_dmi_clear_i),
+    .dmi_clear_o     (dmi_clear_1),
+
+    .dmi_req_i       (jtag_dmi_req_i),
+    .dmi_req_valid_i (jtag_dmi_req_valid_i),
+    .dmi_req_ready_o (jtag_dmi_req_ready_o),
+
+    .dmi_req_o       (dmi_req_1),
+    .dmi_req_valid_o (dmi_req_valid_1),
+    .dmi_req_ready_i (dmi_req_ready_2),
+
+    .dmi_resp_i      (dmi_resp_2),
+    .dmi_resp_valid_i(dmi_resp_valid_2),
+    .dmi_resp_ready_o(dmi_resp_ready_1),
+
+    .dmi_resp_o      (jtag_dmi_resp_o),
+    .dmi_resp_valid_o(jtag_dmi_resp_valid_o),
+    .dmi_resp_ready_i(jtag_dmi_resp_ready_i)
+  );
+
+  // CDC Stage 2 (tck -> clk)
+  cdc_stage stage_1 (
+    .clk_i           (clk),
+    .rst_ni          (rst_ni),
+
+    .dmi_clear_i     (dmi_clear_1),
+    .dmi_clear_o     (dmi_clear_2),
+
+    .dmi_req_i       (dmi_req_1),
+    .dmi_req_valid_i (dmi_req_valid_1),
+    .dmi_req_ready_o (dmi_req_ready_1),
+
+    .dmi_req_o       (dmi_req_2),
+    .dmi_req_valid_o (dmi_req_valid_2),
+    .dmi_req_ready_i (dmi_req_ready_1),
+
+    .dmi_resp_i      (dmi_resp_1),
+    .dmi_resp_valid_i(dmi_resp_valid_1),
+    .dmi_resp_ready_o(dmi_resp_ready_2),
+
+    .dmi_resp_o      (dmi_resp_2),
+    .dmi_resp_valid_o(dmi_resp_valid_2),
+    .dmi_resp_ready_i(dmi_resp_ready_1)
+  );
+
+  // CDC Stage 3 (clk -> clk)
+  cdc_stage stage_2 (
+    .clk_i           (clk),
+    .rst_ni          (rst_ni),
+
+    .dmi_clear_i     (dmi_clear_2),
+    .dmi_clear_o     (dbg_dmi_clear_o),
+
+    .dmi_req_i       (dmi_req_2),
+    .dmi_req_valid_i (dmi_req_valid_2),
+    .dmi_req_ready_o (dmi_req_ready_2),
+
+    .dmi_req_o       (dbg_dmi_req_o),
+    .dmi_req_valid_o (dbg_dmi_req_valid_o),
+    .dmi_req_ready_i (dbg_dmi_req_ready_i),
+
+    .dmi_resp_i      (dbg_dmi_resp_i),
+    .dmi_resp_valid_i(dbg_dmi_resp_valid_i),
+    .dmi_resp_ready_o(dbg_dmi_resp_ready_o),
+
+    .dmi_resp_o      (dmi_resp_1),
+    .dmi_resp_valid_o(dmi_resp_valid_1),
+    .dmi_resp_ready_i(dmi_resp_ready_2)
+  );
 
 endmodule
