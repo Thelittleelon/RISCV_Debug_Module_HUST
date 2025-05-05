@@ -1,4 +1,12 @@
-/home/hoangdang/Documents/DATN/debug_code/rtl/dtm_registers.sv {2 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_registers.sv
+/home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv {1 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_dmi_jtag
+-- Importing package dm
+
+Top level modules:
+	tb_dmi_jtag
+
+} {} {}} /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_registers.sv {2 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_registers.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module dtm_registers
 -- Importing package dm
@@ -7,12 +15,32 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	dtm_registers
 
-} {} {}} /home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv {1 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv
+} {} {}} /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag_old.sv {2 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag_old.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling package dm
+-- Compiling module dmi_jtag_old
+-- Importing package dm
+** Warning: /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag_old.sv(15): (vlog-13314) Defaulting port 'dmi_resp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 
 Top level modules:
-	--none--
+	dmi_jtag_old
+
+} {} {}} /home/hoangdang/Documents/DATN/debug_code/rtl/cdc_stage.sv {2 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/cdc_stage.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module cdc_stage
+-- Importing package dm
+** Warning: /home/hoangdang/Documents/DATN/debug_code/rtl/cdc_stage.sv(7): (vlog-13314) Defaulting port 'dmi_req_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+** Warning: /home/hoangdang/Documents/DATN/debug_code/rtl/cdc_stage.sv(19): (vlog-13314) Defaulting port 'dmi_resp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+
+Top level modules:
+	cdc_stage
+
+} {} {}} /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag_old.sv {1 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag_old.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_dmi_jtag_old
+-- Importing package dm
+
+Top level modules:
+	tb_dmi_jtag_old
 
 } {} {}} /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv {1 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/dtm_jtag_tap.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -21,20 +49,27 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	dtm_jtag_tap
 
+} {} {}} /home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv {1 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package dm
+
+Top level modules:
+	--none--
+
+} {} {}} /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv {2 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dmi_jtag
+-- Importing package dm
+** Warning: /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv(18): (vlog-13314) Defaulting port 'dbg_dmi_resp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+
+Top level modules:
+	dmi_jtag
+
 } {} {}} /home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv {1 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/tb/tb_dtm_jtag_tap.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module tb_dtm_jtag_tap
 
 Top level modules:
 	tb_dtm_jtag_tap
-
-} {} {}} /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv {2 {vlog -work work -sv -stats=none /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module dmi_jtag
--- Importing package dm
-** Warning: /home/hoangdang/Documents/DATN/debug_code/rtl/dmi_jtag.sv(15): (vlog-13314) Defaulting port 'dmi_resp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-
-Top level modules:
-	dmi_jtag
 
 } {} {}}

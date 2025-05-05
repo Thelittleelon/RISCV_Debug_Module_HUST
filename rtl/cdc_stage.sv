@@ -1,5 +1,5 @@
 module cdc_stage (
-  input  logic clk,
+  input  logic clk_i,
   input  logic rst_ni,
 
   // INPUT SIDE (source domain, e.g. TCK domain)
@@ -31,7 +31,7 @@ module cdc_stage (
 
   // dmi_clear sync
   logic dmi_clear_q;
-  always_ff @(posedge clk or negedge rst_ni) begin
+  always_ff @(posedge clk_i) begin
     if (!rst_ni) dmi_clear_q <= 1'b0;
     else         dmi_clear_q <= dmi_clear_i;
   end
@@ -44,7 +44,7 @@ module cdc_stage (
   assign dmi_req_o       = dmi_req_q;
   assign dmi_req_valid_o = dmi_req_valid_q;
 
-  always_ff @(posedge clk) begin
+  always_ff @(posedge clk_i) begin
     if (!rst_ni) begin
       dmi_req_valid_q <= 1'b0;
       dmi_req_q       <= '0;
@@ -65,7 +65,7 @@ module cdc_stage (
   assign dmi_resp_o       = dmi_resp_q;
   assign dmi_resp_valid_o = dmi_resp_valid_q;
 
-  always_ff @(posedge clk) begin
+  always_ff @(posedge clk_i) begin
     if (!rst_ni) begin
       dmi_resp_valid_q <= 1'b0;
       dmi_resp_q       <= '0;
