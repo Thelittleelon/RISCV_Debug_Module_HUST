@@ -26,19 +26,19 @@ module dtm_cdc (
 );
 
   // Intermediate wires between 3 CDC stages
-  logic             dmi_clear_1, dmi_clear_2;
-  dm::dmi_req_t     dmi_req_1, dmi_req_2;
-  logic             dmi_req_valid_1, dmi_req_valid_2;
-  logic             dmi_req_ready_1, dmi_req_ready_2;
+  logic             dmi_clear_mid;
+  dm::dmi_req_t     dmi_req_mid;
+  logic             dmi_req_valid_mid;
+  logic             dmi_req_ready_mid;
 
-  dm::dmi_resp_t    dmi_resp_1, dmi_resp_2;
-  logic             dmi_resp_valid_1, dmi_resp_valid_2;
-  logic             dmi_resp_ready_1, dmi_resp_ready_2;
+  dm::dmi_resp_t    dmi_resp_mid;
+  logic             dmi_resp_valid_mid;
+  logic             dmi_resp_ready_mid;
 
   // CDC Stage 1 (tck -> tck)
   cdc_stage stage_0 (
-    .clk_i           (tck),
-    .rst_ni          (trst_ni),
+    .clk_i           (clk),
+    .rst_ni          (rst_ni),
 
     .dmi_clear_i     (jtag_dmi_clear_i),
     .dmi_clear_o     (dmi_clear_1),
@@ -47,13 +47,13 @@ module dtm_cdc (
     .dmi_req_valid_i (jtag_dmi_req_valid_i),
     .dmi_req_ready_o (jtag_dmi_req_ready_o),
 
-    .dmi_req_o       (dmi_req_1),
-    .dmi_req_valid_o (dmi_req_valid_1),
-    .dmi_req_ready_i (dmi_req_ready_2),
+    .dmi_req_o       (dmi_req_mid),
+    .dmi_req_valid_o (dmi_req_valid_mid),
+    .dmi_req_ready_i (dmi_req_ready_mid),
 
-    .dmi_resp_i      (dmi_resp_2),
-    .dmi_resp_valid_i(dmi_resp_valid_2),
-    .dmi_resp_ready_o(dmi_resp_ready_1),
+    .dmi_resp_i      (dmi_resp_mid),
+    .dmi_resp_valid_i(dmi_resp_valid_mid),
+    .dmi_resp_ready_o(dmi_resp_ready_mid),
 
     .dmi_resp_o      (jtag_dmi_resp_o),
     .dmi_resp_valid_o(jtag_dmi_resp_valid_o),
@@ -61,41 +61,41 @@ module dtm_cdc (
   );
 
   // CDC Stage 2 (tck -> clk)
+  // cdc_stage stage_1 (
+  //   .clk_i           (clk),
+  //   .rst_ni          (rst_ni),
+
+  //   .dmi_clear_i     (dmi_clear_1),
+  //   .dmi_clear_o     (dmi_clear_2),
+
+  //   .dmi_req_i       (dmi_req_1),
+  //   .dmi_req_valid_i (dmi_req_valid_1),
+  //   .dmi_req_ready_o (dmi_req_ready_1),
+
+  //   .dmi_req_o       (dmi_req_2),
+  //   .dmi_req_valid_o (dmi_req_valid_2),
+  //   .dmi_req_ready_i (dmi_req_ready_1),
+
+  //   .dmi_resp_i      (dmi_resp_1),
+  //   .dmi_resp_valid_i(dmi_resp_valid_1),
+  //   .dmi_resp_ready_o(dmi_resp_ready_2),
+
+  //   .dmi_resp_o      (dmi_resp_2),
+  //   .dmi_resp_valid_o(dmi_resp_valid_2),
+  //   .dmi_resp_ready_i(dmi_resp_ready_1)
+  // );
+
+  // CDC Stage 3 (clk -> clk)
   cdc_stage stage_1 (
     .clk_i           (clk),
     .rst_ni          (rst_ni),
 
-    .dmi_clear_i     (dmi_clear_1),
-    .dmi_clear_o     (dmi_clear_2),
+    .dmi_clear_i     (dmi_clear_mid),
+    .dmi_clear_o     (dbg_dmi_clear_mid),
 
-    .dmi_req_i       (dmi_req_1),
-    .dmi_req_valid_i (dmi_req_valid_1),
-    .dmi_req_ready_o (dmi_req_ready_1),
-
-    .dmi_req_o       (dmi_req_2),
-    .dmi_req_valid_o (dmi_req_valid_2),
-    .dmi_req_ready_i (dmi_req_ready_1),
-
-    .dmi_resp_i      (dmi_resp_1),
-    .dmi_resp_valid_i(dmi_resp_valid_1),
-    .dmi_resp_ready_o(dmi_resp_ready_2),
-
-    .dmi_resp_o      (dmi_resp_2),
-    .dmi_resp_valid_o(dmi_resp_valid_2),
-    .dmi_resp_ready_i(dmi_resp_ready_1)
-  );
-
-  // CDC Stage 3 (clk -> clk)
-  cdc_stage stage_2 (
-    .clk_i           (clk),
-    .rst_ni          (rst_ni),
-
-    .dmi_clear_i     (dmi_clear_2),
-    .dmi_clear_o     (dbg_dmi_clear_o),
-
-    .dmi_req_i       (dmi_req_2),
-    .dmi_req_valid_i (dmi_req_valid_2),
-    .dmi_req_ready_o (dmi_req_ready_2),
+    .dmi_req_i       (dmi_req_mid),
+    .dmi_req_valid_i (dmi_req_valid_mid),
+    .dmi_req_ready_o (dmi_req_ready_mid),
 
     .dmi_req_o       (dbg_dmi_req_o),
     .dmi_req_valid_o (dbg_dmi_req_valid_o),
@@ -105,9 +105,9 @@ module dtm_cdc (
     .dmi_resp_valid_i(dbg_dmi_resp_valid_i),
     .dmi_resp_ready_o(dbg_dmi_resp_ready_o),
 
-    .dmi_resp_o      (dmi_resp_1),
-    .dmi_resp_valid_o(dmi_resp_valid_1),
-    .dmi_resp_ready_i(dmi_resp_ready_2)
+    .dmi_resp_o      (dmi_resp_mid),
+    .dmi_resp_valid_o(dmi_resp_valid_mid),
+    .dmi_resp_ready_i(dmi_resp_ready_mid)
   );
 
 endmodule
