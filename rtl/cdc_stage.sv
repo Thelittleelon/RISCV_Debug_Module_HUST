@@ -44,7 +44,7 @@ module cdc_stage (
   assign dmi_req_o       = dmi_req_q;
   assign dmi_req_valid_o = dmi_req_valid_q;
 
-  always_ff @(posedge clk or negedge rst_ni) begin
+  always_ff @(posedge clk) begin
     if (!rst_ni) begin
       dmi_req_valid_q <= 1'b0;
       dmi_req_q       <= '0;
@@ -65,7 +65,7 @@ module cdc_stage (
   assign dmi_resp_o       = dmi_resp_q;
   assign dmi_resp_valid_o = dmi_resp_valid_q;
 
-  always_ff @(posedge clk or negedge rst_ni) begin
+  always_ff @(posedge clk) begin
     if (!rst_ni) begin
       dmi_resp_valid_q <= 1'b0;
       dmi_resp_q       <= '0;
