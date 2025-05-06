@@ -35,7 +35,7 @@ module dtm_cdc (
   logic             dmi_resp_valid_mid;
   logic             dmi_resp_ready_mid;
 
-  // CDC Stage 1 (tck -> tck)
+  // CDC Stage 0 (tck -> tck)
   cdc_stage stage_0 (
     .clk_i           (clk),
     .rst_ni          (rst_ni),
@@ -59,33 +59,9 @@ module dtm_cdc (
     .dmi_resp_valid_o(jtag_dmi_resp_valid_o),
     .dmi_resp_ready_i(jtag_dmi_resp_ready_i)
   );
+  
 
-  // CDC Stage 2 (tck -> clk)
-  // cdc_stage stage_1 (
-  //   .clk_i           (clk),
-  //   .rst_ni          (rst_ni),
-
-  //   .dmi_clear_i     (dmi_clear_1),
-  //   .dmi_clear_o     (dmi_clear_2),
-
-  //   .dmi_req_i       (dmi_req_1),
-  //   .dmi_req_valid_i (dmi_req_valid_1),
-  //   .dmi_req_ready_o (dmi_req_ready_1),
-
-  //   .dmi_req_o       (dmi_req_2),
-  //   .dmi_req_valid_o (dmi_req_valid_2),
-  //   .dmi_req_ready_i (dmi_req_ready_1),
-
-  //   .dmi_resp_i      (dmi_resp_1),
-  //   .dmi_resp_valid_i(dmi_resp_valid_1),
-  //   .dmi_resp_ready_o(dmi_resp_ready_2),
-
-  //   .dmi_resp_o      (dmi_resp_2),
-  //   .dmi_resp_valid_o(dmi_resp_valid_2),
-  //   .dmi_resp_ready_i(dmi_resp_ready_1)
-  // );
-
-  // CDC Stage 3 (clk -> clk)
+  // CDC Stage 1 (clk -> clk)
   cdc_stage stage_1 (
     .clk_i           (clk),
     .rst_ni          (rst_ni),
