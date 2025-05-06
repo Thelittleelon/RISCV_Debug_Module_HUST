@@ -144,6 +144,13 @@ module tb_dmi_jtag;
     #100;
     dbg_dmi_resp_valid_i = 0;
 
+    #40;
+
+    tms_i = 1; #40; // SelectDR
+    tms_i = 0; #40; // CaptureDR 
+    tms_i = 0; #40;// ShiftDR
+
+
     #200 $finish;
   end
 
