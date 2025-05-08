@@ -17,7 +17,7 @@ module cdc_stage_resp (
   assign dmi_resp_o       = resp_q;
   assign dmi_resp_valid_o = valid_q;
 
-  always_ff @(posedge tck_i or negedge trst_ni) begin
+  always_ff @(posedge tck_i) begin
     if (!trst_ni) begin
       valid_q <= 1'b0;
       resp_q  <= '0;
