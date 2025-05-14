@@ -37,6 +37,8 @@ module dm_sba_control(
     output logic [2:0]             sberror_o // bus error occurred
 );
 
+localparam int BeIdxWidth = 2;
+dm::sba_state_e state_d, state_q;
 
 logic [31:0] address;
 logic req;
@@ -46,6 +48,41 @@ logic [3:0] be;
 logic [3:0] be_mask;
 logic [1:0] be_idx;
 
+assign sbbusy_o = logic'(state_q != dm::Idle);
+
+always_comb begin : p_be_mask
+    be_mask = '0;
+
+    // generate byte enable mask
+    unique case (sbaccess_i)
+        3'b000: begin
+            be_mask[be_idx] = '1;
+        end
+        3'b001: begin
+            // be_mask[int'({be_idx[$high(be_idx):1], 1'b0}) +: 2] = '1;
+            if (be_idx[1] == 1'b1) begin
+                be_mask[3:2] = 2'b11;
+            end
+
+            else begin
+                be_mask[1:0] = 2'b11;        
+            end
+        end
+        3'b010: begin
+            be_mask = '1;
+        end
+        // 3'b011: be_mask = '1;
+        default: ;
+    endcase
+end
+
+logic [31:0] sbaccess_mask;
+assign sbaccess_mask = {32{1'b1}} << sbaccess_i;
+
+logic addr_incr_en;
+logic [31:0] addr_incr;
+assign addr_incr = (addr_incr_en) ? (32'(1'b1) << sbaccess_i) : '0;
+assign sbaddress_o = sbaddress_i + addr_incr;
 
 
 endmodule
