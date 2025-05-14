@@ -259,3 +259,79 @@ run -all
 quit -sim
 # End time: 08:48:12 on May 08,2025, Elapsed time: 0:01:25
 # Errors: 0, Warnings: 1
+# Compile of dm_pkg.sv was successful.
+# Compile of dtm_jtag_tap.sv was successful.
+# Compile of dtm_registers.sv was successful with warnings.
+# Compile of tb_dtm_jtag_tap.sv was successful.
+# Compile of tb_dmi_jtag.sv was successful.
+# Compile of dmi_jtag.sv was successful with warnings.
+# Compile of dtm_cdc.sv was successful with warnings.
+# Compile of cdc_stage_req.sv was successful with warnings.
+# Compile of cdc_stage_resp.sv was successful with warnings.
+# 9 compiles, 2 failed with no errors.
+# Compile of dm_pkg.sv was successful.
+# Compile of dtm_jtag_tap.sv was successful.
+# Compile of dtm_registers.sv was successful with warnings.
+# Compile of tb_dtm_jtag_tap.sv was successful.
+# Compile of tb_dmi_jtag.sv was successful.
+# Compile of dmi_jtag.sv was successful with warnings.
+# Compile of dtm_cdc.sv was successful with warnings.
+# Compile of cdc_stage_req.sv was successful with warnings.
+# Compile of cdc_stage_resp.sv was successful with warnings.
+# 9 compiles, 0 failed with no errors.
+vsim work.tb_dmi_jtag
+# vsim work.tb_dmi_jtag 
+# Start time: 11:02:35 on May 08,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dmi_jtag
+# Loading work.dmi_jtag
+# Loading work.dtm_jtag_tap
+# Loading work.dtm_registers
+# Loading work.dtm_cdc
+# Loading work.cdc_stage_req
+# Loading work.cdc_stage_resp
+quit -sim
+# End time: 11:02:52 on May 08,2025, Elapsed time: 0:00:17
+# Errors: 0, Warnings: 4
+vsim work.tb_dmi_jtag
+# vsim work.tb_dmi_jtag 
+# Start time: 11:02:53 on May 08,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dmi_jtag
+# Loading work.dmi_jtag
+# Loading work.dtm_jtag_tap
+# Loading work.dtm_registers
+# Loading work.dtm_cdc
+# Loading work.cdc_stage_req
+# Loading work.cdc_stage_resp
+add wave -position insertpoint  \
+sim:/tb_dmi_jtag/clk \
+sim:/tb_dmi_jtag/tck_i
+add wave -position insertpoint  \
+sim:/tb_dmi_jtag/dbg_dmi_req_o \
+sim:/tb_dmi_jtag/dbg_dmi_resp_i \
+sim:/tb_dmi_jtag/tck_i
+add wave -position insertpoint  \
+sim:/tb_dmi_jtag/dut/jtag_dmi_req \
+sim:/tb_dmi_jtag/dut/jtag_dmi_resp
+run -all
+# [2590000] DMI_REQ → addr=10 data=07ffffc1 op=2
+# [2610000] DMI_REQ → addr=10 data=07ffffc1 op=2
+# [2770000] DMI_RESP ← data=00000000 resp=0
+# [2790000] DMI_RESP ← data=00000000 resp=0
+# [2810000] DMI_RESP ← data=00000000 resp=0
+# [2830000] DMI_RESP ← data=00000000 resp=0
+# [2850000] DMI_RESP ← data=00000000 resp=0
+# [4750000] DMI_REQ → addr=10 data=00000000 op=1
+# [4770000] DMI_REQ → addr=10 data=00000000 op=1
+# [4910000] DMI_RESP ← data=cafebabe resp=0
+# [4930000] DMI_RESP ← data=cafebabe resp=0
+# [4950000] DMI_RESP ← data=cafebabe resp=0
+# [4970000] DMI_RESP ← data=cafebabe resp=0
+# [4990000] DMI_RESP ← data=cafebabe resp=0
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv(154)
+#    Time: 5360 ns  Iteration: 0  Instance: /tb_dmi_jtag
+# 1
+# Break in Module tb_dmi_jtag at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv line 154
