@@ -1,337 +1,2456 @@
 # Loading project sim_test_2nd
 # Compile of dm_pkg.sv was successful.
-# Compile of dtm_jtag_tap.sv was successful.
-# Compile of dtm_registers.sv was successful with warnings.
-# Compile of tb_dtm_jtag_tap.sv was successful.
-# Compile of tb_dmi_jtag.sv was successful.
-# Compile of dmi_jtag.sv was successful with warnings.
-# Compile of dtm_cdc.sv was successful with warnings.
-# Compile of tb_dmi_jtag_old.sv was successful.
-# Compile of dmi_jtag_old.sv was successful with warnings.
-# Compile of cdc_stage_req.sv was successful with warnings.
-# Compile of cdc_stage_resp.sv was successful with warnings.
-# 11 compiles, 1 failed with no errors.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
 # Compile of dm_pkg.sv was successful.
-# Compile of dtm_jtag_tap.sv was successful.
-# Compile of dtm_registers.sv was successful with warnings.
-# Compile of tb_dtm_jtag_tap.sv was successful.
-# Compile of tb_dmi_jtag.sv was successful.
-# Compile of dmi_jtag.sv was successful with warnings.
-# Compile of dtm_cdc.sv was successful with warnings.
-# Compile of tb_dmi_jtag_old.sv was successful.
-# Compile of dmi_jtag_old.sv was successful with warnings.
-# Compile of cdc_stage_req.sv was successful with warnings.
-# Compile of cdc_stage_resp.sv was successful with warnings.
-# 11 compiles, 1 failed with no errors.
-# Compile of dm_pkg.sv was successful.
-# Compile of dtm_jtag_tap.sv was successful.
-# Compile of dtm_registers.sv was successful with warnings.
-# Compile of tb_dtm_jtag_tap.sv was successful.
-# Compile of tb_dmi_jtag.sv was successful.
-# Compile of dmi_jtag.sv was successful with warnings.
-# Compile of dtm_cdc.sv was successful with warnings.
-# Compile of tb_dmi_jtag_old.sv was successful.
-# Compile of dmi_jtag_old.sv was successful with warnings.
-# Compile of cdc_stage_req.sv was successful with warnings.
-# Compile of cdc_stage_resp.sv was successful with warnings.
-# 11 compiles, 0 failed with no errors.
-vsim work.tb_dmi_jtag
-# vsim work.tb_dmi_jtag 
-# Start time: 08:27:53 on May 08,2025
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 08:45:38 on May 16,2025
 # Loading sv_std.std
 # Loading work.dm
-# Loading work.tb_dmi_jtag
-# Loading work.dmi_jtag
-# Loading work.dtm_jtag_tap
-# Loading work.dtm_registers
-# Loading work.dtm_cdc
-# Loading work.cdc_stage_req
-# Loading work.cdc_stage_resp
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
 add wave -position insertpoint  \
-sim:/tb_dmi_jtag/tck_i \
-sim:/tb_dmi_jtag/clk \
-sim:/tb_dmi_jtag/dbg_dmi_req_o \
-sim:/tb_dmi_jtag/dbg_dmi_resp_i
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
 add wave -position insertpoint  \
-sim:/tb_dmi_jtag/dut/jtag_dmi_req \
-sim:/tb_dmi_jtag/dut/jtag_dmi_resp
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
 run -all
-# [2590000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2610000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2770000] DMI_RESP ← data=00000000 resp=0
-# [2790000] DMI_RESP ← data=00000000 resp=0
-# [2810000] DMI_RESP ← data=00000000 resp=0
-# [2830000] DMI_RESP ← data=00000000 resp=0
-# [2850000] DMI_RESP ← data=00000000 resp=0
-# [4750000] DMI_REQ → addr=10 data=00000000 op=1
-# [4770000] DMI_REQ → addr=10 data=00000000 op=1
-# [4910000] DMI_RESP ← data=cafebabe resp=0
-# [4930000] DMI_RESP ← data=cafebabe resp=0
-# [4950000] DMI_RESP ← data=cafebabe resp=0
-# [4970000] DMI_RESP ← data=cafebabe resp=0
-# [4990000] DMI_RESP ← data=cafebabe resp=0
-# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv(154)
-#    Time: 5360 ns  Iteration: 0  Instance: /tb_dmi_jtag
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
 # 1
-# Break in Module tb_dmi_jtag at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv line 154
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
 quit -sim
-# End time: 08:32:49 on May 08,2025, Elapsed time: 0:04:56
-# Errors: 0, Warnings: 5
-# Compile of dm_pkg.sv was successful.
-# Compile of dtm_jtag_tap.sv was successful.
-# Compile of dtm_registers.sv was successful with warnings.
-# Compile of tb_dtm_jtag_tap.sv was successful.
-# Compile of tb_dmi_jtag.sv was successful.
-# Compile of dmi_jtag.sv was successful with warnings.
-# Compile of dtm_cdc.sv was successful with warnings.
-# Compile of tb_dmi_jtag_old.sv was successful.
-# Compile of dmi_jtag_old.sv was successful with warnings.
-# Compile of cdc_stage_req.sv was successful with warnings.
-# Compile of cdc_stage_resp.sv was successful with warnings.
-# 11 compiles, 0 failed with no errors.
-vsim work.tb_dmi_jtag
-# vsim work.tb_dmi_jtag 
-# Start time: 08:32:55 on May 08,2025
+# End time: 09:15:11 on May 16,2025, Elapsed time: 0:29:33
+# Errors: 0, Warnings: 6
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:15:14 on May 16,2025
 # Loading sv_std.std
 # Loading work.dm
-# Loading work.tb_dmi_jtag
-# Loading work.dmi_jtag
-# Loading work.dtm_jtag_tap
-# Loading work.dtm_registers
-# Loading work.dtm_cdc
-# Loading work.cdc_stage_req
-# Loading work.cdc_stage_resp
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+quit -sim
+# End time: 09:15:17 on May 16,2025, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:17:23 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
 add wave -position insertpoint  \
-sim:/tb_dmi_jtag/tck_i \
-sim:/tb_dmi_jtag/clk \
-sim:/tb_dmi_jtag/dbg_dmi_req_o \
-sim:/tb_dmi_jtag/dbg_dmi_resp_i
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
 add wave -position insertpoint  \
-sim:/tb_dmi_jtag/dut/jtag_dmi_req \
-sim:/tb_dmi_jtag/dut/jtag_dmi_resp
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q
 run -all
-# [2590000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2610000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2770000] DMI_RESP ← data=00000000 resp=0
-# [2790000] DMI_RESP ← data=00000000 resp=0
-# [2810000] DMI_RESP ← data=00000000 resp=0
-# [2830000] DMI_RESP ← data=00000000 resp=0
-# [2850000] DMI_RESP ← data=00000000 resp=0
-# [4750000] DMI_REQ → addr=10 data=00000000 op=1
-# [4770000] DMI_REQ → addr=10 data=00000000 op=1
-# [4910000] DMI_RESP ← data=cafebabe resp=0
-# [4930000] DMI_RESP ← data=cafebabe resp=0
-# [4950000] DMI_RESP ← data=cafebabe resp=0
-# [4970000] DMI_RESP ← data=cafebabe resp=0
-# [4990000] DMI_RESP ← data=cafebabe resp=0
-# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv(154)
-#    Time: 5360 ns  Iteration: 0  Instance: /tb_dmi_jtag
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
 # 1
-# Break in Module tb_dmi_jtag at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv line 154
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 09:18:50 on May 16,2025, Elapsed time: 0:01:27
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:18:52 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 09:20:10 on May 16,2025, Elapsed time: 0:01:18
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:20:16 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 09:21:57 on May 16,2025, Elapsed time: 0:01:41
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:22:00 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/sbdata_read_valid
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 09:24:28 on May 16,2025, Elapsed time: 0:02:28
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:24:33 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/memory \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
 # Can't move the Now cursor.
 quit -sim
-# End time: 08:43:27 on May 08,2025, Elapsed time: 0:10:32
-# Errors: 0, Warnings: 2
-# Compile of dm_pkg.sv was successful.
-# Compile of dtm_jtag_tap.sv was successful.
-# Compile of dtm_registers.sv was successful with warnings.
-# Compile of tb_dtm_jtag_tap.sv was successful.
-# Compile of tb_dmi_jtag.sv was successful.
-# Compile of dmi_jtag.sv was successful with warnings.
-# Compile of dtm_cdc.sv was successful with warnings.
-# Compile of tb_dmi_jtag_old.sv was successful.
-# Compile of dmi_jtag_old.sv was successful with warnings.
-# Compile of cdc_stage_req.sv was successful with warnings.
-# Compile of cdc_stage_resp.sv was successful with warnings.
-# 11 compiles, 0 failed with no errors.
-vsim work.tb_dmi_jtag
-# vsim work.tb_dmi_jtag 
-# Start time: 08:43:35 on May 08,2025
-# Loading sv_std.std
-# Loading work.dm
-# Loading work.tb_dmi_jtag
-# Loading work.dmi_jtag
-# Loading work.dtm_jtag_tap
-# Loading work.dtm_registers
-# Loading work.dtm_cdc
-# Loading work.cdc_stage_req
-# Loading work.cdc_stage_resp
-run -all
-# [2590000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2610000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2770000] DMI_RESP ← data=00000000 resp=0
-# [2790000] DMI_RESP ← data=00000000 resp=0
-# [2810000] DMI_RESP ← data=00000000 resp=0
-# [2830000] DMI_RESP ← data=00000000 resp=0
-# [2850000] DMI_RESP ← data=00000000 resp=0
-# [4750000] DMI_REQ → addr=10 data=00000000 op=1
-# [4770000] DMI_REQ → addr=10 data=00000000 op=1
-# [4910000] DMI_RESP ← data=cafebabe resp=0
-# [4930000] DMI_RESP ← data=cafebabe resp=0
-# [4950000] DMI_RESP ← data=cafebabe resp=0
-# [4970000] DMI_RESP ← data=cafebabe resp=0
-# [4990000] DMI_RESP ← data=cafebabe resp=0
-# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv(154)
-#    Time: 5360 ns  Iteration: 0  Instance: /tb_dmi_jtag
-# 1
-# Break in Module tb_dmi_jtag at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv line 154
-quit -sim
-# End time: 08:46:16 on May 08,2025, Elapsed time: 0:02:41
-# Errors: 0, Warnings: 2
-vsim work.tb_dmi_jtag
-# vsim work.tb_dmi_jtag 
-# Start time: 08:46:23 on May 08,2025
-# Loading sv_std.std
-# Loading work.dm
-# Loading work.tb_dmi_jtag
-# Loading work.dmi_jtag
-# Loading work.dtm_jtag_tap
-# Loading work.dtm_registers
-# Loading work.dtm_cdc
-# Loading work.cdc_stage_req
-# Loading work.cdc_stage_resp
-add wave -position insertpoint  \
-sim:/tb_dmi_jtag/tck_i \
-sim:/tb_dmi_jtag/clk \
-sim:/tb_dmi_jtag/dbg_dmi_req_o \
-sim:/tb_dmi_jtag/dbg_dmi_resp_i
-run -all
-# [2590000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2610000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2770000] DMI_RESP ← data=00000000 resp=0
-# [2790000] DMI_RESP ← data=00000000 resp=0
-# [2810000] DMI_RESP ← data=00000000 resp=0
-# [2830000] DMI_RESP ← data=00000000 resp=0
-# [2850000] DMI_RESP ← data=00000000 resp=0
-# [4750000] DMI_REQ → addr=10 data=00000000 op=1
-# [4770000] DMI_REQ → addr=10 data=00000000 op=1
-# [4910000] DMI_RESP ← data=cafebabe resp=0
-# [4930000] DMI_RESP ← data=cafebabe resp=0
-# [4950000] DMI_RESP ← data=cafebabe resp=0
-# [4970000] DMI_RESP ← data=cafebabe resp=0
-# [4990000] DMI_RESP ← data=cafebabe resp=0
-# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv(154)
-#    Time: 5360 ns  Iteration: 0  Instance: /tb_dmi_jtag
-# 1
-# Break in Module tb_dmi_jtag at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv line 154
-quit -sim
-# End time: 08:46:45 on May 08,2025, Elapsed time: 0:00:22
-# Errors: 0, Warnings: 1
-vsim work.tb_dmi_jtag
-# vsim work.tb_dmi_jtag 
-# Start time: 08:46:47 on May 08,2025
-# Loading sv_std.std
-# Loading work.dm
-# Loading work.tb_dmi_jtag
-# Loading work.dmi_jtag
-# Loading work.dtm_jtag_tap
-# Loading work.dtm_registers
-# Loading work.dtm_cdc
-# Loading work.cdc_stage_req
-# Loading work.cdc_stage_resp
-add wave -position insertpoint  \
-sim:/tb_dmi_jtag/tck_i \
-sim:/tb_dmi_jtag/clk \
-sim:/tb_dmi_jtag/dbg_dmi_req_o \
-sim:/tb_dmi_jtag/dbg_dmi_resp_i
-add wave -position insertpoint  \
-sim:/tb_dmi_jtag/dut/jtag_dmi_req \
-sim:/tb_dmi_jtag/dut/jtag_dmi_resp
-run -all
-# [2590000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2610000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2770000] DMI_RESP ← data=00000000 resp=0
-# [2790000] DMI_RESP ← data=00000000 resp=0
-# [2810000] DMI_RESP ← data=00000000 resp=0
-# [2830000] DMI_RESP ← data=00000000 resp=0
-# [2850000] DMI_RESP ← data=00000000 resp=0
-# [4750000] DMI_REQ → addr=10 data=00000000 op=1
-# [4770000] DMI_REQ → addr=10 data=00000000 op=1
-# [4910000] DMI_RESP ← data=cafebabe resp=0
-# [4930000] DMI_RESP ← data=cafebabe resp=0
-# [4950000] DMI_RESP ← data=cafebabe resp=0
-# [4970000] DMI_RESP ← data=cafebabe resp=0
-# [4990000] DMI_RESP ← data=cafebabe resp=0
-# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv(154)
-#    Time: 5360 ns  Iteration: 0  Instance: /tb_dmi_jtag
-# 1
-# Break in Module tb_dmi_jtag at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv line 154
-quit -sim
-# End time: 08:48:12 on May 08,2025, Elapsed time: 0:01:25
-# Errors: 0, Warnings: 1
-# Compile of dm_pkg.sv was successful.
-# Compile of dtm_jtag_tap.sv was successful.
-# Compile of dtm_registers.sv was successful with warnings.
-# Compile of tb_dtm_jtag_tap.sv was successful.
-# Compile of tb_dmi_jtag.sv was successful.
-# Compile of dmi_jtag.sv was successful with warnings.
-# Compile of dtm_cdc.sv was successful with warnings.
-# Compile of cdc_stage_req.sv was successful with warnings.
-# Compile of cdc_stage_resp.sv was successful with warnings.
-# 9 compiles, 2 failed with no errors.
-# Compile of dm_pkg.sv was successful.
-# Compile of dtm_jtag_tap.sv was successful.
-# Compile of dtm_registers.sv was successful with warnings.
-# Compile of tb_dtm_jtag_tap.sv was successful.
-# Compile of tb_dmi_jtag.sv was successful.
-# Compile of dmi_jtag.sv was successful with warnings.
-# Compile of dtm_cdc.sv was successful with warnings.
-# Compile of cdc_stage_req.sv was successful with warnings.
-# Compile of cdc_stage_resp.sv was successful with warnings.
-# 9 compiles, 0 failed with no errors.
-vsim work.tb_dmi_jtag
-# vsim work.tb_dmi_jtag 
-# Start time: 11:02:35 on May 08,2025
-# Loading sv_std.std
-# Loading work.dm
-# Loading work.tb_dmi_jtag
-# Loading work.dmi_jtag
-# Loading work.dtm_jtag_tap
-# Loading work.dtm_registers
-# Loading work.dtm_cdc
-# Loading work.cdc_stage_req
-# Loading work.cdc_stage_resp
-quit -sim
-# End time: 11:02:52 on May 08,2025, Elapsed time: 0:00:17
+# End time: 09:28:47 on May 16,2025, Elapsed time: 0:04:14
 # Errors: 0, Warnings: 4
-vsim work.tb_dmi_jtag
-# vsim work.tb_dmi_jtag 
-# Start time: 11:02:53 on May 08,2025
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:28:48 on May 16,2025
 # Loading sv_std.std
 # Loading work.dm
-# Loading work.tb_dmi_jtag
-# Loading work.dmi_jtag
-# Loading work.dtm_jtag_tap
-# Loading work.dtm_registers
-# Loading work.dtm_cdc
-# Loading work.cdc_stage_req
-# Loading work.cdc_stage_resp
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
 add wave -position insertpoint  \
-sim:/tb_dmi_jtag/clk \
-sim:/tb_dmi_jtag/tck_i
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
 add wave -position insertpoint  \
-sim:/tb_dmi_jtag/dbg_dmi_req_o \
-sim:/tb_dmi_jtag/dbg_dmi_resp_i \
-sim:/tb_dmi_jtag/tck_i
-add wave -position insertpoint  \
-sim:/tb_dmi_jtag/dut/jtag_dmi_req \
-sim:/tb_dmi_jtag/dut/jtag_dmi_resp
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q
 run -all
-# [2590000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2610000] DMI_REQ → addr=10 data=07ffffc1 op=2
-# [2770000] DMI_RESP ← data=00000000 resp=0
-# [2790000] DMI_RESP ← data=00000000 resp=0
-# [2810000] DMI_RESP ← data=00000000 resp=0
-# [2830000] DMI_RESP ← data=00000000 resp=0
-# [2850000] DMI_RESP ← data=00000000 resp=0
-# [4750000] DMI_REQ → addr=10 data=00000000 op=1
-# [4770000] DMI_REQ → addr=10 data=00000000 op=1
-# [4910000] DMI_RESP ← data=cafebabe resp=0
-# [4930000] DMI_RESP ← data=cafebabe resp=0
-# [4950000] DMI_RESP ← data=cafebabe resp=0
-# [4970000] DMI_RESP ← data=cafebabe resp=0
-# [4990000] DMI_RESP ← data=cafebabe resp=0
-# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv(154)
-#    Time: 5360 ns  Iteration: 0  Instance: /tb_dmi_jtag
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
 # 1
-# Break in Module tb_dmi_jtag at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dmi_jtag.sv line 154
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 09:40:57 on May 16,2025, Elapsed time: 0:12:09
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:41:06 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+quit -sim
+# End time: 09:42:34 on May 16,2025, Elapsed time: 0:01:28
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:42:39 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 09:43:51 on May 16,2025, Elapsed time: 0:01:12
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:43:58 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_op_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_data_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_addr_i
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 09:47:59 on May 16,2025, Elapsed time: 0:04:01
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:48:00 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_addr_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_data_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_op_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 09:57:45 on May 16,2025, Elapsed time: 0:09:45
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 09:57:58 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_addr_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_data_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_op_i
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 10:01:29 on May 16,2025, Elapsed time: 0:03:31
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 10:04:40 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 10:13:12 on May 16,2025, Elapsed time: 0:08:32
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 10:16:32 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_addr_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_data_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_req_op_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 10:18:13 on May 16,2025, Elapsed time: 0:01:41
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 10:19:05 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 10:23:50 on May 16,2025, Elapsed time: 0:04:45
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 10:23:55 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(132)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 132
+quit -sim
+# End time: 10:36:42 on May 16,2025, Elapsed time: 0:12:47
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 10:36:53 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 10:46:15 on May 16,2025, Elapsed time: 0:09:22
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 10:46:21 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbaddr_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbaddr_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbaddress_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbaddress_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbdata_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 10:55:27 on May 16,2025, Elapsed time: 0:09:06
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 10:55:29 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbdata_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbbusy_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 11:06:26 on May 16,2025, Elapsed time: 0:10:57
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 11:06:30 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbdata_read_valid_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbreadondata_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 11:10:13 on May 16,2025, Elapsed time: 0:03:43
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 11:10:20 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/memory \
+sim:/tb_dm_sba_top/rst_n
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 11:11:16 on May 16,2025, Elapsed time: 0:00:56
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 11:11:19 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 11:30:17 on May 16,2025, Elapsed time: 0:18:58
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 11:30:23 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/memory \
+sim:/tb_dm_sba_top/rst_n
+add wave -position 5  sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr
+add wave -position 6  sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbdata_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbbusy_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+quit -sim
+# End time: 11:40:13 on May 16,2025, Elapsed time: 0:09:50
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 11:44:57 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sberror_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbdata_read_valid_i
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 14:18:14 on May 16,2025, Elapsed time: 2:33:17
+# Errors: 0, Warnings: 6
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 14:18:17 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/memory \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbdata_read_valid_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbbusy_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 14:20:53 on May 16,2025, Elapsed time: 0:02:36
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 14:20:54 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbdata_read_valid_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbbusy_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 14:34:36 on May 16,2025, Elapsed time: 0:13:42
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 14:34:38 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+quit -sim
+# End time: 14:38:33 on May 16,2025, Elapsed time: 0:03:55
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 14:38:40 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 14:50:12 on May 16,2025, Elapsed time: 0:11:32
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 14:50:14 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 14:58:36 on May 16,2025, Elapsed time: 0:08:22
+# Errors: 0, Warnings: 4
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 14:58:38 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 15:18:31 on May 16,2025, Elapsed time: 0:19:53
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 15:18:51 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 15:23:12 on May 16,2025, Elapsed time: 0:04:21
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 15:23:14 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+quit -sim
+# End time: 15:28:11 on May 16,2025, Elapsed time: 0:04:57
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 15:28:17 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 130 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 15:44:16 on May 16,2025, Elapsed time: 0:15:59
+# Errors: 0, Warnings: 5
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 15:44:31 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 140 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 15:48:17 on May 16,2025, Elapsed time: 0:03:46
+# Errors: 0, Warnings: 5
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 15:48:19 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_d
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_d
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 140 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 16:09:29 on May 16,2025, Elapsed time: 0:21:10
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 16:09:37 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position 3  sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr
+add wave -position 6  sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/sbreadondata_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 140 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 16:19:49 on May 16,2025, Elapsed time: 0:10:12
+# Errors: 0, Warnings: 5
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 16:32:49 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 140 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 16:51:44 on May 16,2025, Elapsed time: 0:18:55
+# Errors: 0, Warnings: 5
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful with warnings.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 16:51:50 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 140 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 17:01:34 on May 16,2025, Elapsed time: 0:09:44
+# Errors: 0, Warnings: 5
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv failed with 1 errors.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 17:12:55 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d_from_bus \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 140 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 17:16:01 on May 16,2025, Elapsed time: 0:03:06
+# Errors: 0, Warnings: 6
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 17:16:36 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d_from_bus \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+quit -sim
+# End time: 17:17:14 on May 16,2025, Elapsed time: 0:00:38
+# Errors: 0, Warnings: 4
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 17:17:19 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 140 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+quit -sim
+# End time: 17:32:07 on May 16,2025, Elapsed time: 0:14:48
+# Errors: 0, Warnings: 5
+# Compile of dm_pkg.sv was successful.
+# Compile of dm_sba_control.sv was successful.
+# Compile of dm_sba_registers.sv was successful with warnings.
+# Compile of dm_sba_top.sv was successful.
+# Compile of tb_dm_sba_top_old.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.tb_dm_sba_top
+# vsim work.tb_dm_sba_top 
+# Start time: 17:32:12 on May 16,2025
+# Loading sv_std.std
+# Loading work.dm
+# Loading work.tb_dm_sba_top
+# Loading work.dm_sba_top
+# Loading work.dm_sba_control
+# Loading work.dm_sba_registers
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'u_dm_sba_top'.  Expected 17, found 16.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top File: /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv Line: 35
+# ** Warning: (vsim-3722) /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(35): [TFMPC] - Missing connection for port 'dmactive_i'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (34) does not match connection size (1) for port 'sba_dmi_resp_o'. The port definition is at: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv(32).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dm_sba_top/u_dm_sba_top/u_sba_regs File: /home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv Line: 73
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/clk \
+sim:/tb_dm_sba_top/dmi_req_addr \
+sim:/tb_dm_sba_top/dmi_req_data \
+sim:/tb_dm_sba_top/dmi_req_op \
+sim:/tb_dm_sba_top/dmi_resp_o \
+sim:/tb_dm_sba_top/master_addr \
+sim:/tb_dm_sba_top/master_be \
+sim:/tb_dm_sba_top/master_gnt \
+sim:/tb_dm_sba_top/master_rdata \
+sim:/tb_dm_sba_top/master_req \
+sim:/tb_dm_sba_top/master_rerr \
+sim:/tb_dm_sba_top/master_rother_err \
+sim:/tb_dm_sba_top/master_rvalid \
+sim:/tb_dm_sba_top/master_wdata \
+sim:/tb_dm_sba_top/master_we \
+sim:/tb_dm_sba_top/rst_n
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbbusy_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbcs_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_d \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_q \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_read_valid_o \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_valid_i \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbdata_write_valid_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_ctrl/state_q
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/read_data
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/sbreadondata_o
+add wave -position insertpoint  \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dm_csr_addr \
+sim:/tb_dm_sba_top/u_dm_sba_top/u_sba_regs/dmi_op
+run -all
+# Start SBA Top Testbench
+# End of Testbench
+# ** Note: $finish    : /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv(133)
+#    Time: 140 ns  Iteration: 0  Instance: /tb_dm_sba_top
+# 1
+# Break in Module tb_dm_sba_top at /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv line 133
+# End time: 17:40:49 on May 16,2025, Elapsed time: 0:08:37
+# Errors: 0, Warnings: 6

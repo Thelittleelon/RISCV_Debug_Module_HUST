@@ -1,0 +1,34 @@
+# Current time Thu May 15 14:20:52 2025
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0x086daa0e: 'sym_insert_ref + 0x13e' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 1    0x086d6106: '<unknown (@0x86d6106)>'
+# 2    0x086d7f82: 'dbg_sym_load_block + 0x152' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 3    0x086d8897: 'dbg_load_named_block + 0x37' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 4    0x086db6ce: 'parser_sym_load_block + 0xce' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 5    0x0841d0f2: 'tclprim_ParserGetFullPath + 0x1d2' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 6    0x0820bc19: '<unknown (@0x820bc19)>'
+# 7    0x0857ec8b: 'TclInvokeStringCommand + 0x7b' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 8    0x0b5e6b53: '<unknown (@0xb5e6b53)>'
+# 9    0x0cf0ab7b: '<unknown (@0xcf0ab7b)>'
+# Current time Thu May 15 15:06:10 2025
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0x086daa0e: 'sym_insert_ref + 0x13e' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 1    0x086d6106: '<unknown (@0x86d6106)>'
+# 2    0x086d7f82: 'dbg_sym_load_block + 0x152' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 3    0x086d8897: 'dbg_load_named_block + 0x37' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 4    0x086db6ce: 'parser_sym_load_block + 0xce' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 5    0x0841d0f2: 'tclprim_ParserGetFullPath + 0x1d2' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 6    0x0820bc19: '<unknown (@0x820bc19)>'
+# 7    0x0857ec8b: 'TclInvokeStringCommand + 0x7b' in '/home/hoangdang/modelsim_ase/linuxaloem/vish'
+# 8    0x0d4ba21b: '<unknown (@0xd4ba21b)>'
+# 9    0x0ce6c3db: '<unknown (@0xce6c3db)>'
