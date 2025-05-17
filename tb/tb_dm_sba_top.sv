@@ -73,12 +73,23 @@ module tb_dm_sba_top;
     // Set sbcs
     dmi_req_op = 2'b10; // Write
     dmi_req_addr = 7'h38; // SBCS
-    dmi_req_data = 32'h00130204; // sbreadonaddr, sbaccess = 010, sbautoincrement, sbasize = 001000(32), sbaccess32
+    dmi_req_data = 32'h00030204; //sbaccess = 010, sbautoincrement, sbasize = 001000(32), sbaccess32
     #10;
 
-    // Set sbaddress0
+    // Write sbaddress0
     dmi_req_addr = 7'h39;
     dmi_req_data = 32'h00000010;
+    #10;
+
+    // Write sbdata0
+    dmi_req_addr = 7'h3c;
+    dmi_req_data = 32'habcdabcd;
+    #20;
+
+    master_rvalid = 1;
+    //master_rdata = 32'hdeadbeef;
+    #10;
+    master_rvalid = 0;
     #10;
 
     // Set sbcs
@@ -87,28 +98,34 @@ module tb_dm_sba_top;
     dmi_req_data = 32'h00038204; // sbreadondata, sbaccess = 010, sbautoincrement, sbasize = 001000(32), sbaccess32
     #10;    
 
-    // Trigger read
+    // Write sbaddress0
+    dmi_req_addr = 7'h39;
+    dmi_req_data = 32'h00000011;
+    #10;
+
+    // Read sbdata0
     dmi_req_op = 2'b01; // Read
     dmi_req_addr = 7'h3c; // SBData0
     #10;
 
     master_rvalid = 1;
     master_rdata = 32'h12345678;
+
     #10;
     master_rvalid = 0;
-    #10;
-
-    // Set sbcs
-    dmi_req_op = 2'b10; // Write
-    dmi_req_addr = 7'h38; // SBCS
-    dmi_req_data = 32'h00030204; //sbaccess = 010, sbautoincrement, sbasize = 001000(32), sbaccess32
-    #10;
-
-    // Trigger write
-    dmi_req_op = 2'b10; // Write
-    dmi_req_addr = 7'h3c; // SBData0
-    dmi_req_data = 32'habcdabcd;
     #20;
+
+    // // Set sbcs
+    // dmi_req_op = 2'b10; // Write
+    // dmi_req_addr = 7'h38; // SBCS
+    // dmi_req_data = 32'h00030204; //sbaccess = 010, sbautoincrement, sbasize = 001000(32), sbaccess32
+    // #10;
+
+    // // Trigger write
+    // dmi_req_op = 2'b10; // Write
+    // dmi_req_addr = 7'h3c; // SBData0
+    // dmi_req_data = 32'habcdabcd;
+    // #20;
 
     // Additional tests: write halfword/byte, error signal triggering...
 
