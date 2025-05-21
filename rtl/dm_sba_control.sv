@@ -88,8 +88,8 @@ always_comb begin : p_fsm
                 state_d = dm::Read;
             else if (sbdata_write_valid_i)
                 state_d = dm::Write;
-            // else if (sbdata_read_valid_i && sbreadondata_i)
-            else if (sbdata_read_valid_i)
+            else if (sbdata_read_valid_i && sbreadondata_i)
+            //else if (sbdata_read_valid_i)
                 state_d = dm::Read;
         end
 
