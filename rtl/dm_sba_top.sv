@@ -77,7 +77,7 @@ module dm_sba_top (
     .dmi_req_data_i(dmi_req_data_i),
     .dmi_req_addr_i(dmi_req_addr_i),
     .dmi_req_op_i(dmi_req_op_i),
-    .sba_dmi_resp_o(dmi_resp_o),
+    .sba_dmi_resp_o(sba_dmi_resp_o),
 
     .sbaddress_o(sbaddress_regs),
     .sbaddress_i(sbaddress_ctrl),

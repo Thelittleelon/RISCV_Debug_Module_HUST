@@ -89,7 +89,7 @@ R6
 R7
 Xdm
 R1
-Z11 !s110 1747391530
+Z11 !s110 1747717082
 !i10b 1
 !s100 =Z0_G4_a9BT;z8356z5fI2
 R3
@@ -100,13 +100,13 @@ R0
 w1747198296
 8/home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv
 F/home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv
-!i122 726
+!i122 818
 L0 19 0
 R5
 r1
 !s85 0
 31
-Z12 !s108 1747391530.000000
+Z12 !s108 1747717082.000000
 !s107 /home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/rtl/dm_pkg.sv|
 !i113 1
@@ -126,7 +126,7 @@ R0
 w1747387010
 8/home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_control.sv
 F/home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_control.sv
-!i122 727
+!i122 819
 L0 1 175
 R5
 r1
@@ -143,17 +143,17 @@ R1
 R2
 R11
 !i10b 1
-!s100 MSZSnSnMGRaJRaDfLgh>>1
+!s100 j^ez@nA@a1P>hfbh0Rokc2
 R3
-IT?BeL:4VT:2;[>DKhclLM2
+I=3>HMkPRdG;:dK^HkmFWX1
 R4
 S1
 R0
-w1747391514
+w1747713003
 8/home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv
 F/home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_registers.sv
-!i122 728
-L0 1 182
+!i122 820
+L0 1 185
 R5
 r1
 !s85 0
@@ -169,16 +169,16 @@ R1
 R2
 R11
 !i10b 1
-!s100 IFFhe2GU1RcREV5oJ0@@m0
+!s100 J>eiEz?m<Jnn94Wgn9K]l1
 R3
-IaBzG>WEj[gnK7j=e1NSBg3
+I9F]ZYMc1]haS1dR5EeJ732
 R4
 S1
 R0
-w1747282718
+w1747708401
 8/home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv
 F/home/hoangdang/Documents/DATN/debug_code/rtl/dm_sba_top.sv
-!i122 729
+!i122 821
 L0 1 104
 R5
 r1
@@ -347,26 +347,26 @@ R7
 vtb_dm_sba_top
 R1
 R2
-R11
+!s110 1747717083
 !i10b 1
-!s100 >:aLJDhaKCI0WY]oL7a8l3
+!s100 D2:X;Hb4AA_MOD3`hdFn>2
 R3
-IPiWS0GXOLHIIiiHjLVT2P2
+I8fRX8f@DQb=7>6^EmGdz`1
 R4
 S1
 R0
-w1747385047
-Z20 8/home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv
-Z21 F/home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv
-!i122 730
-L0 5 132
+w1747717072
+8/home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top.sv
+F/home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top.sv
+!i122 822
+L0 5 139
 R5
 r1
 !s85 0
 31
 R12
-Z22 !s107 /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv|
-Z23 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv|
+!s107 /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top.sv|
 !i113 1
 R6
 R7
@@ -382,8 +382,8 @@ R4
 S1
 R0
 w1747305293
-R20
-R21
+8/home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv
+F/home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv
 !i122 626
 L0 5 131
 R5
@@ -391,8 +391,8 @@ r1
 !s85 0
 31
 !s108 1747305404.000000
-R22
-R23
+!s107 /home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/hoangdang/Documents/DATN/debug_code/tb/tb_dm_sba_top_old.sv|
 !i113 1
 R6
 R7

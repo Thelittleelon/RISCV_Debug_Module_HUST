@@ -36,7 +36,7 @@ module dm_sba_registers (
   dm::sbcs_t sbcs_d, sbcs_q;
   logic [63:0] sbdata_d, sbdata_q;
   logic [63:0] sbaddr_d, sbaddr_q;
-  logic read_data;
+  //logic read_data;
 
   // Decode op and CSR address
   dm::dtm_op_e  dmi_op;
@@ -60,14 +60,17 @@ module dm_sba_registers (
   always_comb begin
     // Default assignments
     sbcs_d                  = sbcs_q;
-    sbaddr_d                = sbaddr_q;
-    if (!read_data)
-    sbdata_d                = sbdata_q;
+    if (!sbaddress_write_valid_o) begin
+      sbaddr_d                = sbaddr_q;
+    end 
+    if (!sbdata_read_valid_o) begin 
+      sbdata_d                = sbdata_q;
+    end
 
     sbaddress_write_valid_o = 1'b0;
     sbdata_read_valid_o     = 1'b0;
     sbdata_write_valid_o    = 1'b0;
-    read_data = 1'b0;
+    //read_data = 1'b0;
 
     sba_dmi_resp_o.data     = '0;
     sba_dmi_resp_o.resp     = dm::DTM_SUCCESS;
@@ -87,7 +90,7 @@ module dm_sba_registers (
           end else begin
             sba_dmi_resp_o.data = sbdata_q[31:0];
             sbdata_read_valid_o = (sbcs_q.sberror == 3'b000);
-            read_data = 1'b1;
+            //read_data = 1'b1;
           end
         end
         dm::SBData1: begin
@@ -161,7 +164,7 @@ module dm_sba_registers (
     end
 
     // Data update from bus
-    if (sbdata_valid_i) begin
+    if (sbdata_valid_i && sbdata_read_valid_o) begin
       sbdata_d = {32'h0, sbdata_i};  // Extend to 64-bit, if needed
     end 
 
